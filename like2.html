@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+</head>
+
+<body style="margin-top: 150px;">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">¡Únete a nuestra comunidad y descubre un mundo de posibilidades!</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous"
+                            src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v17.0&appId=207762472160199&autoLogAppEvents=1"
+                            nonce="hPxhPgEm"></script>
+
+                        <!-- Your like button code -->
+                        <div class="fb-page" data-lazy="true"
+                            data-href="https://www.facebook.com/Asinetwork?mibextid=ZbWKwL" data-width="" data-height=""
+                            data-small-header="true" data-adapt-container-width="false" data-action="like"
+                            data-hide-cover="false" data-show-facepile="false">
+
+                        </div>
+
+
+                        <div class="fb-like" data-href="https://www.facebook.com/Asinetwork/?ref=embed_page"
+                            data-width="" data-layout="" data-action="like" data-size="" data-share="false"></div>
+                        <div class="card-footer">
+                            <p>Siguenos para disfrutar del mejor internet!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+        <script>
+            window.addEventListener('beforeunload', function (event) {
+                // Aquí puedes realizar las acciones necesarias antes de que se cierre la pestaña
+                // o se abra una nueva pestaña
+
+                // Por ejemplo, puedes mostrar un mensaje de confirmación
+                event.returnValue = '¿Seguro que quieres salir de esta página?';
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                var observer = new MutationObserver(function (mutationsList) {
+                    for (var mutation of mutationsList) {
+                        if (mutation.addedNodes) {
+                            for (var node of mutation.addedNodes) {
+                                if (node.tagName === 'SPAN') {
+                                    var iframe = node.querySelector('iframe');
+                                    console.log(node)
+                                    console.log(iframe)
+                                }
+                            }
+                        }
+                    }
+                });
+
+                observer.observe(document.body, { childList: true, subtree: true });
+            });
+
+        </script>
+
+</body>
+
+</html>
